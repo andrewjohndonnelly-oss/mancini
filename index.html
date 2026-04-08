@@ -473,7 +473,7 @@ h2 em { font-style: italic; color: var(--clay); }
 /* ── LOCATIONS ── */
 .loc-section { background: var(--clay-wash); }
 .loc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-2); margin-top: var(--sp-5); }
-.loc-card { border-radius: 14px; overflow: hidden; border: 1.5px solid var(--border); transition: box-shadow 0.2s, transform 0.2s; transform-style: preserve-3d; will-change: transform; }
+.loc-card { border-radius: 14px; overflow: hidden; border: 1.5px solid var(--border); transition: box-shadow 0.2s, transform 0.2s; cursor: pointer; }
 .loc-card:hover { box-shadow: 0 6px 24px rgba(28,43,69,0.1); transform: translateY(-2px); }
 .loc-top { background: var(--navy); padding: 26px 24px 22px; position: relative; overflow: hidden; }
 .loc-top::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--clay); }
@@ -1157,18 +1157,18 @@ footer { background: var(--navy); padding: 30px var(--px); display: flex; align-
     <p class="eyebrow reveal">Where We Are</p>
     <h2 class="reveal">Close to the markets<br>we serve.</h2>
     <div class="loc-grid">
-      <div class="loc-card reveal">
+      <a class="loc-card reveal" href="https://www.google.com/maps/search/?api=1&query=164+East+3900+South+Salt+Lake+City+UT+84107" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
         <div class="loc-top"><div class="loc-city">Salt Lake City</div><div class="loc-state">Utah</div><span class="loc-hq">Headquarters</span></div>
-        <div class="loc-body"><div class="loc-addr">164 East 3900 South<br>Salt Lake City, UT 84107<br><br><a href="tel:8012664453">(801) 266-4453</a><br><a href="/cdn-cgi/l/email-protection#681b09040d1b280509060b010601451a070c0706460b0705">sales&#64;mancini-rodon.com</a></div></div>
-      </div>
-      <div class="loc-card reveal d1">
+        <div class="loc-body"><div class="loc-addr">164 East 3900 South<br>Salt Lake City, UT 84107<br><br><span style="color:var(--navy);font-weight:700;">(801) 266-4453</span><br><span style="color:var(--navy);font-weight:700;">sales&#64;mancini-rodon.com</span></div></div>
+      </a>
+      <a class="loc-card reveal d1" href="https://www.google.com/maps/search/?api=1&query=Boise+Idaho" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
         <div class="loc-top"><div class="loc-city">Boise</div><div class="loc-state">Idaho</div></div>
         <div class="loc-body"><div class="loc-addr">Our Idaho team brings the same local focus and relationships to markets throughout the state and surrounding area.</div></div>
-      </div>
-      <div class="loc-card reveal d2">
+      </a>
+      <a class="loc-card reveal d2" href="https://www.google.com/maps/search/?api=1&query=Billings+Montana" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
         <div class="loc-top"><div class="loc-city">Billings</div><div class="loc-state">Montana</div></div>
         <div class="loc-body"><div class="loc-addr">Covering Montana and the northern Intermountain region with boots on the ground and real market knowledge.</div></div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1357,6 +1357,10 @@ footer { background: var(--navy); padding: 30px var(--px); display: flex; align-
       var dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
       card.style.transform = 'perspective(700px) rotateX(' + (-dy*5) + 'deg) rotateY(' + (dx*5) + 'deg) translateY(-4px)';
       card.style.boxShadow = '0 14px 36px rgba(28,43,69,0.14)';
+    });
+    card.addEventListener('click', function(e) {
+      var href = card.getAttribute('href');
+      if (href) { window.open(href, '_blank', 'noopener'); }
     });
     card.addEventListener('mouseleave', function() {
       card.style.transition = 'transform 0.45s ease, box-shadow 0.45s ease';
