@@ -14,7 +14,7 @@
 <meta name="twitter:description" content="The largest food broker in the Intermountain West. 500+ grocery stores, 1,000+ convenience stores across Utah, Idaho, and Montana.">
 <link rel="canonical" href="https://mancini-rodon.com">
 <meta name="robots" content="index, follow">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 48'><text y='16' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%231C2B45'>M</text><text x='6' y='32' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%231C2B45'>R</text><text x='12' y='48' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%23B85C3A'>G</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='4' width='4' height='24' rx='2' fill='%23B85C3A'/%3E%3Ctext x='10' y='15' font-family='Georgia,serif' font-size='12' font-weight='700' fill='%231C2B45'%3EM%3C/text%3E%3Ctext x='13' y='27' font-family='Georgia,serif' font-size='12' font-weight='700' fill='%231C2B45'%3ER%3C/text%3E%3C/svg%3E"><text y='16' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%231C2B45'>M</text><text x='6' y='32' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%231C2B45'>R</text><text x='12' y='48' font-family='Georgia,serif' font-size='18' font-weight='600' fill='%23B85C3A'>G</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <style>
@@ -526,6 +526,17 @@ footer { background: var(--navy); padding: 30px var(--px); display: flex; align-
 .footer-nav { display: flex; gap: 22px; flex-wrap: wrap; }
 .footer-nav a { font-size: var(--text-xs); font-weight: 600; color: rgba(255,255,255,0.38); text-decoration: none; transition: color 0.2s; }
 .footer-nav a:hover { color: var(--clay-lt); }
+.footer-contact {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: 8px; justify-content: center; margin-bottom: 12px;
+}
+.footer-contact-link {
+  font-size: var(--text-xs); color: rgba(255,255,255,0.38);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.footer-contact-link:hover { color: var(--clay-lt); }
+.footer-dot { color: rgba(255,255,255,0.2); font-size: var(--text-xs); }
 .footer-copy { font-size: var(--text-xs); color: rgba(255,255,255,0.65); }
 
 /* ── REVEAL ── */
@@ -1210,6 +1221,13 @@ footer { background: var(--navy); padding: 30px var(--px); display: flex; align-
     <a href="#locations">Locations</a>
     <a href="#contact">Contact</a>
   </nav>
+  <div class="footer-contact">
+    <a href="https://www.google.com/maps/search/?api=1&query=164+East+3900+South+Salt+Lake+City+UT+84107" target="_blank" rel="noopener" class="footer-contact-link">164 East 3900 South, Salt Lake City, UT 84107</a>
+    <span class="footer-dot">&middot;</span>
+    <a href="tel:8012664453" class="footer-contact-link">(801) 266-4453</a>
+    <span class="footer-dot">&middot;</span>
+    <a href="mailto:sales@mancini-rodon.com" class="footer-contact-link">sales@mancini-rodon.com</a>
+  </div>
   <span class="footer-copy">&copy; Mancini Rodon Group 2025</span>
 </footer>
 <script>
